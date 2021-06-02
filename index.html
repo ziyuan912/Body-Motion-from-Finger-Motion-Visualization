@@ -7,11 +7,15 @@
               border: 1px solid black;
               border-collapse: collapse;
             }
+/*            h1 {text-align: center;}
+            div {text-align: center;}*/
         </style>
     </head>
     <body>
         <h1>Body Motion from Finger Motion Visualization</h1>
-
+        <div style="width: 50%;">
+        Frame by frame evaluation result of Body Motion from Finger Motion (Ours) and <a href="https://vision.cornell.edu/se3/wp-content/uploads/2018/03/1575.pdf">Controllable Video Generation with Sparse Trajectories</a>. For each sample, the top left frame is our ground truth video. We aim to generate videos whose wrists can move along the ground truth wrist trajectories. The upper frames in the middle and right are the videos generate by our method and the baseline. The lower left frame is the predicted pose generates by our method. The lower frames in the moddle and right are the heatmap of PSNR with 4x4 windows of 2 different methods. Although our result looks plausible and sharp, the misalignment of the head and arms lead to a worse PSNR score than the blurry result of the baseline method.
+        </div>
         <h3>Total Result</h3>
         <table width=50% style='text-align:center'>
             <th>Method</th><th>Ours</th><th>Hao et al.</th>
