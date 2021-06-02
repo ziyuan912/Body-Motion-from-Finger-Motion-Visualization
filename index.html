@@ -23,37 +23,37 @@
             </tr>
         </table>
         <script language="javascript" type="text/javascript">
-            var baseurl = "https://https://ziyuan912.github.io/Body-Motion-from-Finger-Motion-Visualization/src/"
+            var baseurl = "https://ziyuan912.github.io/Body-Motion-from-Finger-Motion-Visualization/src/"
             // var baseurl = "./src/"
             
             // create table
-            var samplenum = 16;
+            var samplenum = 19;
             
             for (var i=0; i < samplenum; i++) {
                 document.write("<h3>sample " + (i + 1).toString() + "</h3>")
 
                 document.write("<table>");
-                document.write("<td><video width='672' height='672' controls><source src='" +baseurl+"output/output"+(i).toString()+".mp4'></video></td>");
-                document.write("</table>");
+                document.write("<td><video width='672' height='672' controls><source src='" +baseurl+"outputs/output"+(i).toString()+".mp4'></video></td>");
+                // document.write("</table>");
 
-                document.write("<table width=50% style='text-align:center'>");
-                document.write("<th>Method</th><th>PSNR</th><th>SSIM</th><th>LPIPS</th>")
-                document.write("<tr>");
-                document.write("<td> 2D baseline </td>")
-                document.write("<td id=controllable_" + (i * 3).toString() + "></td>");
-                document.write("<td id=controllable_" + (i * 3 + 1).toString() + "></td>");
-                document.write("<td id=controllable_" + (i * 3 + 2).toString() + "></td>");
-                document.write("</tr>");
+                // document.write("<table width=50% style='text-align:center'>");
+                // document.write("<th>Method</th><th>PSNR</th><th>SSIM</th><th>LPIPS</th>")
+                // document.write("<tr>");
+                // document.write("<td> 2D baseline </td>")
+                // document.write("<td id=controllable_" + (i * 3).toString() + "></td>");
+                // document.write("<td id=controllable_" + (i * 3 + 1).toString() + "></td>");
+                // document.write("<td id=controllable_" + (i * 3 + 2).toString() + "></td>");
+                // document.write("</tr>");
                 
-                document.write("</br>")
+                // document.write("</br>")
 
-                document.write("<tr>");
-                document.write("<td> Ours </td>")
-                document.write("<td id=pp_" + (i * 3).toString() + "></td>");
-                document.write("<td id=pp_" + (i * 3 + 1).toString() + "></td>");
-                document.write("<td id=pp_" + (i * 3 + 2).toString() + "></td>");
-                document.write("</tr>");
-                document.write("</table>");
+                // document.write("<tr>");
+                // document.write("<td> Ours </td>")
+                // document.write("<td id=pp_" + (i * 3).toString() + "></td>");
+                // document.write("<td id=pp_" + (i * 3 + 1).toString() + "></td>");
+                // document.write("<td id=pp_" + (i * 3 + 2).toString() + "></td>");
+                // document.write("</tr>");
+                // document.write("</table>");
 
                 document.write("<table width=50% style='text-align:center'>");
                 document.write("<th>Method</th><th>Ours</th><th>Hao et al.</th>")
@@ -103,16 +103,16 @@
             }
 
             // write controllable file
-            // var controllable_txt = baseurl + "Controllable/result.txt";
-            var controllable_txt = "./src/control_result.txt";
+            var controllable_txt = baseurl + "control_result.txt";
+            // var controllable_txt = "src/control_result.txt";
             var controllable_reader = new XMLHttpRequest() || new ActiveXObject('MSXML2.XMLHTTP');
             controllable_reader.open('get', controllable_txt, true); 
             controllable_reader.onreadystatechange = write_controllable_content;
             controllable_reader.send(null);
             
             // write pp file
-            // var pp_txt = baseurl + "pp/result.txt";
-            var pp_txt = "./src/ours_result.txt";
+            var pp_txt = baseurl + "ours_result.txt";
+            // var pp_txt = "src/ours_result.txt";
             var pp_reader = new XMLHttpRequest() || new ActiveXObject('MSXML2.XMLHTTP');
             pp_reader.open('get', pp_txt, true); 
             pp_reader.onreadystatechange = write_pp_content;
